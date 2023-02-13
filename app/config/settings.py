@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     API_PREFIX: str = '/api'
     HOST: str = Field(..., env="HOST")
     PORT: int = Field(..., env="PORT")
-    BASE_URL = '{}:{}'.format(HOST, str(PORT))
+    BASE_URL: str = '{}:{}'.format(HOST, str(PORT))
     AWS_DEFAULT_REGION: str = Field(..., env="AWS_DEFAULT_REGION")
     DYNAMODB_TABLE_NAME: str = Field(..., env="DYNAMODB_TABLE_NAME")
 
