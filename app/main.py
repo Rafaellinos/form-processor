@@ -17,4 +17,11 @@ app = FastAPI(
 async def startup():
     await Database.connect()
 
+
+@app.get(app.root_path + "/openapi.json")
+def custom_swagger_ui_html():
+    return app.openapi()
+
+
 app.include_router(router, prefix=settings.API_PREFIX)
+
