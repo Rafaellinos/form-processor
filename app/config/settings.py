@@ -12,17 +12,13 @@ class Settings(BaseSettings):
     HOST: str = Field(..., env="HOST")
     PORT: int = Field(..., env="PORT")
     BASE_URL = '{}:{}'.format(HOST, str(PORT))
+    AWS_DEFAULT_REGION: str = Field(..., env="AWS_DEFAULT_REGION")
+    DYNAMODB_TABLE_NAME: str = Field(..., env="DYNAMODB_TABLE_NAME")
 
     class Config:
         env_file = ENV_FILE
         env_file_encoding = 'utf-8'
         case_sensitive: bool = True
-
-        @classmethod
-        def parse_env_var(cls, field_name: str, env_var: str) -> str:
-            print(field_name)
-            print(env_var)
-            return ""
 
 
 @lru_cache()
