@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "form-processor"
+version = "0.1.0"
+description = "Generic form processor"
+authors = ["Rafael Lino"]
+readme = "README.md"
+packages = [{include = "form_processor"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.91.0"
+uvicorn = "^0.20.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.4"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
