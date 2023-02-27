@@ -51,12 +51,15 @@ class Database:
         session = await Database.get_session()
         async with session.resource('dynamodb', region_name=get_settings().AWS_DEFAULT_REGION) as dynamodb:
             table = await dynamodb.Table(get_settings().DYNAMODB_TABLE_NAME)
-            result = await table.put_item(
-                Item={
+            item = {
+                **simple_form_data.dict(),
+                **{
                     "id": str(uuid4()),
                     "date": datetime.today().isoformat(),
-                    **simple_form_data.dict(),
                 }
+            }
+            result = await table.put_item(
+                Item=item,
             )
             logging.debug("boto return: %s", result)
             return result

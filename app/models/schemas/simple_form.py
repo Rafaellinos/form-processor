@@ -3,6 +3,7 @@ from typing import Optional, List
 
 
 class SimpleForm(BaseModel):
+    id: str = Field(default=None)
     name: str = Field(...)
     email: str = Field(...)
     phone: str = Field(...)
