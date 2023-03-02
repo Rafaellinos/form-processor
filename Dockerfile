@@ -1,6 +1,5 @@
 FROM python:3.11-buster AS poetry
 
-WORKDIR /app
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
@@ -17,7 +16,8 @@ RUN poetry install --no-root --only main
 
 FROM poetry AS app
 
-COPY src/ app.py ./
+COPY src/ /app/src/
 
-#CMD ["python", "app.py"]
-ENTRYPOINT ["sleep", "999999"]
+COPY app.py /app/
+
+CMD ["python", "/app/app.py"]
