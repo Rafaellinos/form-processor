@@ -2,8 +2,8 @@ from typing import List
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException
-from app.database.database import Database
-from app.models.schemas.simple_form import SimpleForm
+from src.database.database import Database
+from src.models.schemas.simple_form import SimpleForm
 
 simple_form_router = APIRouter()
 

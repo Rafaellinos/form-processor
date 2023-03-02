@@ -6,8 +6,8 @@ from boto3.dynamodb.conditions import Key
 from uuid import uuid4, UUID
 from datetime import datetime
 
-from app.config.settings import get_settings
-from app.models.schemas.simple_form import SimpleForm
+from src.config.settings import get_settings
+from src.models.schemas.simple_form import SimpleForm
 
 
 class Database:

@@ -1,5 +1,5 @@
-from app.main import app
-from app.config.settings import get_settings
+from src.main import app
+from src.config.settings import get_settings
 
 settings = get_settings()
 

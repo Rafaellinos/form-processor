@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.config.settings import get_settings
-from app.database.database import Database
-from app.routes.router import router
+from src.config.settings import get_settings
+from src.database.database import Database
+from src.routes.router import router
 
 settings = get_settings()
 
