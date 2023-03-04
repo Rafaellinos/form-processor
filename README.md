@@ -38,6 +38,12 @@ uvicorn app.main:app
 docker compose up -d
 ```
 
+#### Running docker manually
+
+```shell
+docker build -t form-processor:latest . && docker run -p 8080:8080 form-processor:latest
+```
+
 ### Health check
 
 ```shell
