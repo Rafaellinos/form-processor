@@ -37,3 +37,10 @@ uvicorn app.main:app
 ```shell
 docker compose up -d
 ```
+
+### Health check
+
+```shell
+curl -f http://localhost:8080/api/health
+```
+
